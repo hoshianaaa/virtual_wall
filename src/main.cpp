@@ -17,6 +17,7 @@ class IDPointCloud
   public:
     pcl::PointCloud < pcl::PointXYZ > pc;
     int id;
+    double start_x, start_y, end_x, end_y;
 };
 
 class Point2D
@@ -39,8 +40,11 @@ class VirtualWallServer
 
       cloud_pub = n.advertise <sensor_msgs::PointCloud2> ("/virtual_wall_cloud", 1, false);
       map_sub = n.subscribe(map_frame_, 1, &VirtualWallServer::mapCallback, this);
-      create_wall_service = n.advertiseService("create_wall", &VirtualWallServer::createWall, this);
-      delete_wall_service = n.advertiseService("delete_wall", &VirtualWallServer::deleteWall, this);
+
+      ros::NodeHandle private_nh("~");
+
+      create_wall_service = private_nh.advertiseService("create_wall", &VirtualWallServer::createWall, this);
+      delete_wall_service = private_nh.advertiseService("delete_wall", &VirtualWallServer::deleteWall, this);
 
       ros::Rate r(10);
 
@@ -54,6 +58,7 @@ class VirtualWallServer
       {
         ros::spinOnce();
         publishCloud();
+        debugCloud();
         r.sleep();
       }
     }
@@ -90,6 +95,10 @@ class VirtualWallServer
       
       IDPointCloud id_pc;
       id_pc.id = req.id;
+      id_pc.start_x = req.start_point.x;
+      id_pc.start_y = req.start_point.y;
+      id_pc.end_x = req.end_point.x;
+      id_pc.end_y = req.end_point.y;
       
       createLineCloud (req.start_point.x, req.end_point.x, req.start_point.y, req.end_point.y, id_pc.pc);
 
@@ -101,19 +110,27 @@ class VirtualWallServer
 
     bool deleteWall(move_base_virtual_wall_server::DeleteWall::Request &req, move_base_virtual_wall_server::DeleteWall::Response &res)
     {
-      deleteWallHandler((int)req.id);
-
-      res.status = true;
-      return true;
+      if(deleteWallHandler((int)req.id))
+      {
+        res.status = true;
+        return true;
+      }
+      else
+      {
+        res.status = false;
+        return false;
+      }
     }
 
     bool deleteWallHandler(int id)
     {
+      bool status = false;
       auto it = clouds_.begin();
       while (it != clouds_.end())
       {
         if (it->id == id)
         {
+          status = true;
           it = clouds_.erase(it);
         }
         else
@@ -121,7 +138,7 @@ class VirtualWallServer
           it ++;
         }
       }
-      return true;
+      return status;
     }
 
     std::vector < IDPointCloud > clouds_; 
@@ -249,6 +266,20 @@ class VirtualWallServer
     }
 
     std::string odom_frame_, map_frame_;
+
+    void debugCloud()
+    {
+      std::cout << "[id] [x0, y0] [x1, y1]" << std::endl;
+      for (int i=0; i < clouds_.size(); i++)
+      {
+        std::cout << "[" << clouds_[i].id << "] ";
+        std::cout << "[" << clouds_[i].start_x << ", ";
+        std::cout << clouds_[i].start_y << "] ";
+        std::cout << "[" << clouds_[i].end_x << ", ";
+        std::cout << clouds_[i].end_y << "]" << std::endl;
+      }
+      std::cout << std::endl;
+    }
 
 };
 
