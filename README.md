@@ -1,6 +1,6 @@
-# road_surface_recognition pkg
+# move_base_virtual_wall_server pkg
 
-This ROS pkg provides the method making occupancy grid map that express lawn place data as occupancy.  
+virtual wall server for move_base ROS navigation pkg  
 
 ## Images
 
