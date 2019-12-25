@@ -1,6 +1,6 @@
 # move_base_virtual_wall_server pkg
 
-Virtual wall server for move_base in ROS navigation pkg  
+Create Virtual Wall server for move_base in ROS navigation pkg  
 
 ## Images
 
