@@ -14,6 +14,9 @@ move_baseのcostmapに仮想の壁を生成できる
 
 move_baesのパラメータファイルcostmap_common_params.yamlを編集する必要がある.
 
+    scan: {data_type: LaserScan, topic: /scan, marking: true, clearing: true,inf_is_valid: true, min_obstacle_height: 0.15, max_obstacle_height: 1.0, obstacle_range: 2.5, raytrace_range: 100.0}
+
+    virtual_wall: {data_type: PointCloud2, topic: /virtual_wall_cloud, marking: true, clearing: true, obstacle_range: 100000, raytrace_range: 100000}
 
 ## How to use
 
