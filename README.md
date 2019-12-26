@@ -1,9 +1,9 @@
 # move_base_virtual_wall_server pkg
 
-move_baseのcostmapに仮想の壁を生成できる  
+move_baseのcostmapに壁を生成できる  
 
 ## Images
-写真のように,仮想の壁を生成できる
+写真のように,壁を生成できる
 
 <img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/wall.png" title="図２壁生成後 after" width="600px" alt="Fig.2 lawnMap">
 
