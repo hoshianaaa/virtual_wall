@@ -17,7 +17,7 @@ https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/params/c
 
 ## How to use
 
-move_baseが起動している状態で、以下のコマンドでサーバを立ち上げる
+move_baseが起動している状態で、以下のコマンドでサーバが立ち上がる
 
 
     1. $ rosrun move_base_virtual_wall_server virtual_wall_server
