@@ -17,12 +17,12 @@ https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/params/c
 
 ## How to use
 
-move_baseが起動している状態で、以下のコマンドでサーバが立ち上がる
+move_baseが起動している状態で、以下のコマンドでサーバが立ち上げる
 
 
     1. $ rosrun move_base_virtual_wall_server virtual_wall_server
 
-壁生成の例
+壁生成の例  
     サンプルプログラムの起動  
     
     2. $ rosrun move_base_virtual_wall_server sample.py
