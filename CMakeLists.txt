@@ -64,6 +64,7 @@ add_service_files(
   FILES
   CreateWall.srv
   DeleteWall.srv
+  DeleteAll.srv
 )
 
 ## Generate actions in the 'action' folder

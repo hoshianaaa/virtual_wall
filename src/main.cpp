@@ -11,6 +11,7 @@
 
 #include <move_base_virtual_wall_server/CreateWall.h>
 #include <move_base_virtual_wall_server/DeleteWall.h>
+#include <move_base_virtual_wall_server/DeleteAll.h>
 
 class IDPointCloud
 {
@@ -45,6 +46,7 @@ class VirtualWallServer
 
       create_wall_service = private_nh.advertiseService("create_wall", &VirtualWallServer::createWall, this);
       delete_wall_service = private_nh.advertiseService("delete_wall", &VirtualWallServer::deleteWall, this);
+      delete_all_service = private_nh.advertiseService("delete_all", &VirtualWallServer::deleteAll, this);
 
       ros::Rate r(10);
 
@@ -69,6 +71,7 @@ class VirtualWallServer
     ros::Subscriber map_sub;
     ros::ServiceServer create_wall_service;
     ros::ServiceServer delete_wall_service;
+    ros::ServiceServer delete_all_service;
 
     void mapCallback(const nav_msgs::OccupancyGridConstPtr& msg)
     {
@@ -120,6 +123,13 @@ class VirtualWallServer
         res.status = false;
         return false;
       }
+    }
+
+    bool deleteAll(move_base_virtual_wall_server::DeleteAll::Request &req, move_base_virtual_wall_server::DeleteAll::Response &res)
+    {
+      clouds_.clear();
+      res.status = true;
+      return 1;
     }
 
     bool deleteWallHandler(int id)
@@ -261,7 +271,7 @@ class VirtualWallServer
 
       pcl::toROSMsg (sum_pcl_cloud, ros_cloud);
 
-      ros_cloud.header.frame_id = odom_frame_;
+      ros_cloud.header.frame_id = map_frame_;
       cloud_pub.publish (ros_cloud);
     }
 
@@ -272,11 +282,9 @@ class VirtualWallServer
       std::cout << "[id] [x0, y0] [x1, y1]" << std::endl;
       for (int i=0; i < clouds_.size(); i++)
       {
-        std::cout << "[" << clouds_[i].id << "] ";
-        std::cout << "[" << clouds_[i].start_x << ", ";
-        std::cout << clouds_[i].start_y << "] ";
-        std::cout << "[" << clouds_[i].end_x << ", ";
-        std::cout << clouds_[i].end_y << "]" << std::endl;
+        std::cout << "[" << clouds_[i].id       << "] ";
+        std::cout << "[" << clouds_[i].start_x  << ", " << clouds_[i].start_y << "] ";
+        std::cout << "[" << clouds_[i].end_x    << ", " << clouds_[i].end_y   << "]" << std::endl;
       }
       std::cout << std::endl;
     }
