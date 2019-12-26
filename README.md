@@ -24,4 +24,4 @@ move_baseが起動している状態で、以下のコマンドでサーバが�
   
 壁生成のサンプル
     
-    2. $ rosrun move_base_virtual_wall_server sample.py
+    2. $ rosrun move_base_virtual_wall_server sample2.py
