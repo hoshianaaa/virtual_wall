@@ -22,15 +22,6 @@ move_baseが起動している状態で、以下のコマンドでサーバが�
 
     1. $ rosrun move_base_virtual_wall_server virtual_wall_server
 
-
-**Run following command when bagfile is finished.**
-
-    4. $ rosservice call /up_map 
-
-**If you can see following message on your terminal,**  
-**`Published an OccupancyGrid data of which topic name is occupancyGrid,`**  
-**finally, run following command.**
- 
-    5. $ rosrun map_server map_saver -f mapFileName map:=lawnOccupancyGrid
- 
-**You can get occupancy grid map named mapFileName on your terminal having done command.**
+壁生成の例
+    サンプルプログラムの起動
+    2. $ rosrun move_base_virtual_wall_server sample.py
