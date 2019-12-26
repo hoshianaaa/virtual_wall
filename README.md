@@ -4,7 +4,7 @@ Create Virtual Wall for move_base in ROS navigation pkg
 
 ## Images
 
-For example you can create virtual wall (Fig. 2) 
+You can create virtual wall (Fig. 2) 
 
 <img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/no_vritual_wall.png" title="Fig.1 before" width="600px" alt="Fig.1 map">
 
