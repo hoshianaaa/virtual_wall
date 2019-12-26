@@ -8,7 +8,7 @@ For example, if you use the map (Fig. 1), you can make the following map (Fig. 2
 
 <img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/no_vritual_wall.png" title="Fig.1 before" width="600px" alt="Fig.1 map">
 
-<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/vritual_wall.png" title="Fig.2 after" width="600px" alt="Fig.2 lawnMap">
+<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/virtual_wall.png" title="Fig.2 after" width="600px" alt="Fig.2 lawnMap">
 
 ## Preparation
 
