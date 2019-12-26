@@ -17,12 +17,10 @@ https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/params/c
 
 ## How to use
 
-    1. $ roslaunch road_surface_recognition build_reflection_mapping.launch
+    (move_baseが起動している状態で)
 
-    2. $ rosrun map_server map_server ~/catkin_ws/src/road_surface_recognition/test/map.yaml
+    1. $ rosrun move_base_virtual_wall_server virtual_wall_server
 
-    3. $ unzip ~/catkin_ws/src/road_surface_recognition/test/bagFile.zip  
-       $ rosbag play ~/catkin_ws/src/road_surface_recognition/test/bagFile.bag
 
 **Run following command when bagfile is finished.**
 
