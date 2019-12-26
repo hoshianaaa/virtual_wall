@@ -22,6 +22,6 @@ move_baseが起動している状態で、以下のコマンドでサーバが�
 
     1. $ rosrun move_base_virtual_wall_server virtual_wall_server
   
-壁生成のサンプル
+壁生成のサンプル(上の写真のような障害物が生成される)
     
     2. $ rosrun move_base_virtual_wall_server sample2.py
