@@ -3,12 +3,9 @@
 move_baseのcostmapに仮想の壁を生成できる  
 
 ## Images
+写真のように,仮想の壁を生成できる
 
-例えば,上の写真から下の写真のように障害物を生成できる
-
-<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/no_vritual_wall.png" title="図１ costmap" width="400px" alt="Fig.1 map">  
-
-<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/virtual_wall.png" title="図２壁生成後 after" width="400px" alt="Fig.2 lawnMap">
+<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/wall.png" title="図２壁生成後 after" width="400px" alt="Fig.2 lawnMap">
 
 ## Preparation
 
@@ -22,6 +19,6 @@ move_baseが起動している状態で、以下のコマンドでサーバを�
 
     1. $ rosrun move_base_virtual_wall_server virtual_wall_server
   
-壁生成のサンプル(上の写真のような障害物が生成される)
+壁生成のサンプル
     
-    2. $ rosrun move_base_virtual_wall_server sample2.py
+    2. $ rosrun move_base_virtual_wall_server sample.py
