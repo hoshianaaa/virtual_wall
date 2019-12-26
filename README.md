@@ -6,9 +6,11 @@ move_baseのcostmapに仮想の壁を生成できる
 
 例えば,図１のcostmap上に図２のように障害物を生成できる.
 
-<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/no_vritual_wall.png" title="図１ costmap" width="400px" alt="Fig.1 map">
+<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/no_vritual_wall.png" title="図１ costmap" width="400px" alt="Fig.1 map">　　
+図１ 壁生成前のcostmap
 
-<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/virtual_wall.png" title="図２壁生成後 after" width="400px" alt="Fig.2 lawnMap">
+<img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/virtual_wall.png" title="図２壁生成後 after" width="400px" alt="Fig.2 lawnMap">  
+図2 壁生成後のcostmap
 
 ## Preparation
 
