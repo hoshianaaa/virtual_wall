@@ -1,4 +1,4 @@
-# move_base_virtual_wall_server pkg
+# move_base_virtual_wall_server
 
 move_baseのcostmapに仮想的な壁を生成できる  
 
