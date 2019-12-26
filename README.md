@@ -12,8 +12,8 @@ move_baseのcostmapに仮想の壁を生成できる
 
 ## Preparation
 
-Please install `laser_geometry` pkg in your catkin_ws/src/ because this pkg uses laser_geometry pkg function.
-<https://github.com/ros-perception/laser_geometry.git>
+move_baesのパラメータファイルcostmap_common_params.yamlを編集する必要がある.
+
 
 ## How to use
 
