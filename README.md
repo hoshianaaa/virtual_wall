@@ -12,7 +12,7 @@ move_baseのcostmapに仮想の壁を生成できる
 
 ## Preparation
 
-以下を参考に,move_baesのパラメータファイルcostmap_common_params.yamlを編集する
+以下を参考に,move_baesのパラメータファイルcostmap_common_params.yamlを編集する  
 https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/params/costmap_common_params.yaml
 
 ## How to use
