@@ -1,6 +1,6 @@
 # move_base_virtual_wall_server pkg
 
-Create Virtual Wall for move_base in ROS navigation pkg  
+move_baseのcostmapに仮想の壁を生成できる  
 
 ## Images
 
