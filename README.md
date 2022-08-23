@@ -6,17 +6,16 @@ generate virtual wall in ros navigation costmap
 
 ## Preparation
 
-+ 以下を参考に,move_baesのパラメータファイルcostmap_common_params.yamlを編集する  
-+ [パラメータファイル](https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/params/costmap_common_params.yaml)
++ Edit the parameter file costmap_common_params.yaml of move_baes with the following reference  
++ [param file](https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/params/costmap_common_params.yaml)
 
 ## How to use
 
-+ move_baseが起動している状態で、以下のコマンドでサーバを立ち上げる
-
++ With move_base running, start the server with the following command
 
      $ rosrun move_base_virtual_wall_server virtual_wall_server
   
-+ 壁生成のサンプル
++ Sample of wall generation
     
      $ rosrun move_base_virtual_wall_server sample.py
 
