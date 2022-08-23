@@ -1,4 +1,4 @@
-# move_base_virtual_wall_server
+# virtual_wall
 
 generate virtual wall in ros navigation costmap 
 
