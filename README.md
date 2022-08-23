@@ -2,9 +2,6 @@
 
 generate virtual wall in ros navigation costmap 
 
-## Images
-+ 写真のように,仮想的な壁を生成できる
-
 <img src="https://github.com/hoshianaaa/move_base_virtual_wall_server/blob/master/images/wall.png" title="図２壁生成後 after" width="600px" alt="Fig.2 lawnMap">
 
 ## Preparation
