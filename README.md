@@ -1,6 +1,6 @@
 # move_base_virtual_wall_server
 
-+ move_baseのcostmapに仮想的な壁を生成できる  
+generate virtual wall in ros navigation costmap 
 
 ## Images
 + 写真のように,仮想的な壁を生成できる
